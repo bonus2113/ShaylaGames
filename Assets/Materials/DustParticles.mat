@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Particles
+  m_Name: DustParticles
   m_Shader: {fileID: 208, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -146,4 +146,4 @@ Material:
       data:
         first:
           name: _EmisColor
-        second: {r: .257352948, g: .257352948, b: .257352948, a: 0}
+        second: {r: .882352948, g: .882352948, b: .882352948, a: 0}

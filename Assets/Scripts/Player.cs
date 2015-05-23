@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
   public Vector3 ConstrainOrigin = new Vector3(0, -5, 0);
   public Vector3 ConstrainDirection = new Vector3(0, 0, 1);
 
+  public ParticleSystem BreathParticles;
+
   private Vector3 vel;
   private Vector3 acc;
   private Transform transform;
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+	  if (Input.GetKeyDown(KeyCode.B)) {
+	    Breath(.7f);
+	  }
+
 	  if (Input.GetKeyDown(KeyCode.Space)) {
 	    acc += transform.forward * StrokeAcceleration;
 	  }
@@ -43,5 +50,9 @@ public class Player : MonoBehaviour {
       transform.position = posProjection + ConstrainOrigin + posDir;
       vel = Vector3.Project(vel, ConstrainDirection);
     }
+  }
+
+  void Breath(float strength) {
+    BreathParticles.Emit((int)(100 * strength));
   }
 }
