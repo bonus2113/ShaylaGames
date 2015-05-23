@@ -46,6 +46,9 @@ public class Player : MonoBehaviour {
 	  diff *= 0.5f;
     float actualFriction = Friction;
 
+	  if (Input.GetKeyDown(KeyCode.Space)) {
+      acc += transform.forward * StrokeAcceleration * 20;
+	  }
 
 	  if (diff < -Time.deltaTime*0.15f || Input.GetKeyDown(KeyCode.Space)) {
 	    if (Mathf.Abs(leftHandPos.x - rightHandPos.x) > 0.7f) {

@@ -15,6 +15,8 @@ CGINCLUDE
 	// z = k (FdotC > 0.0)
 	// w = a/2
 	uniform float4 _HeightParams;
+
+  uniform float4 _LightFogColor;
 	
 	// x = start distance
 	uniform float4 _DistanceParams;
@@ -107,7 +109,7 @@ CGINCLUDE
 		float3 aV = _HeightParams.w * V;
 		float FdotC = _HeightParams.y;
 		float k = _HeightParams.z;
-		float FdotP = P.y-FH;
+    float FdotP = P.y-FH;
 		float FdotV = wsDir.y;
 		float c1 = k * (FdotP + FdotC);
 		float c2 = (1-2*k) * FdotP;
@@ -131,19 +133,24 @@ CGINCLUDE
 		float g = _DistanceParams.x;
 		if (distance)
 			g += ComputeDistance (wsDir, dpth);
+
 		if (height)
-			g += ComputeHalfSpace (wsDir);
+			g += ComputeHalfSpace (-wsDir);
 
 		// Compute fog amount
 		half fogFac = ComputeFogFactor (max(0.0,g));
 		// Do not fog skybox
-		if (rawDepth >= 0.999999)
-			fogFac = 1.0;
+		/*if (rawDepth >= 0.999999)
+			fogFac = 1.0;*/
 		//return fogFac; // for debugging
 		
+    float lightFactor = max(0.0, dot( normalize(wsDir), float3(0, 1, 0)));
+
+    float4 fogColor = lerp(unity_FogColor, unity_FogColor * float4(1.7f, 1.8f, 1.5f, 1), lightFactor);
+
 		// Lerp between fog color & original scene color
 		// by fog amount
-		return lerp (unity_FogColor, sceneColor, fogFac);
+    return lerp(fogColor, sceneColor, fogFac);
 	}
 
 ENDCG
