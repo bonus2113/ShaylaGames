@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f3844e4c2b321da4f8c7f6ed0207e47c
-timeCreated: 1432328414
+timeCreated: 1432379506
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -9,14 +9,14 @@ SubstanceImporter:
     name: SandFloor
     prototypeName: SandFloor
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 5
     inputs: []
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 30, y: 30}
+      scale: {x: 20, y: 20}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -28,14 +28,14 @@ SubstanceImporter:
             name: _MainTex
           second:
             texture: {instanceID: 0}
-            scale: {x: 30, y: 30}
+            scale: {x: 20, y: 20}
             offset: {x: 0, y: 0}
         data:
           first:
             name: _BumpMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 30, y: 3}
+            scale: {x: 20, y: 2}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -48,7 +48,7 @@ SubstanceImporter:
           first:
             name: _ParallaxMap
           second:
-            texture: {instanceID: 0}
+            texture: {fileID: 2800000, guid: c2010987c93ff1a4187c548d16f8aa04, type: 3}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
         data:
@@ -63,7 +63,7 @@ SubstanceImporter:
             name: _EmissionMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 30, y: 30}
+            scale: {x: 20, y: 20}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -84,7 +84,7 @@ SubstanceImporter:
             name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 30, y: 3}
+            scale: {x: 20, y: 2}
             offset: {x: 0, y: 0}
       floats:
         data:
@@ -114,7 +114,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 1
+          second: .699999988
         data:
           first:
             name: _OcclusionStrength

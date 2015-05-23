@@ -2,3 +2,5 @@
 /Build
 *.sln
 *.suo
+*.csproj
+/Temp

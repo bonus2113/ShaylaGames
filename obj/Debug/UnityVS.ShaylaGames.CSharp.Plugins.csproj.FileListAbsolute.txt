@@ -1,0 +1,13 @@
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+C:\Users\dario\Documents\ShaylaGames\obj\Debug\UnityVS.ShaylaGames.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.pdb
