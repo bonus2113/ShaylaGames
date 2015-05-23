@@ -116,15 +116,15 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .79400003
+        second: .400000006
       data:
         first:
           name: _Shininess
-        second: .217999995
+        second: .00999999978
       data:
         first:
           name: _WindQuality
-        second: 0
+        second: 1
       data:
         first:
           name: _SrcBlend
@@ -144,7 +144,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .00999999978
       data:
         first:
           name: _BumpScale
@@ -353,7 +353,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor

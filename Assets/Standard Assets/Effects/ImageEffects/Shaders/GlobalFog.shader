@@ -146,7 +146,7 @@ CGINCLUDE
 		
     float lightFactor = max(0.0, dot( normalize(wsDir), float3(0, 1, 0)));
 
-    float4 fogColor = lerp(unity_FogColor, unity_FogColor * float4(1.7f, 1.8f, 1.5f, 1), lightFactor);
+    float4 fogColor = lerp(unity_FogColor, unity_FogColor * float4(1.9f, 2.0f, 1.8f, 1), lightFactor);
 
 		// Lerp between fog color & original scene color
 		// by fog amount
