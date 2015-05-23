@@ -66,12 +66,12 @@ public class AvatarController : MonoBehaviour
 	}
 
   public Vector3 GetLeftHand() {
-    return bones[7].position;
+    return bones[7].position - bodyRoot.position;
   }
 
 
   public Vector3 GetRightHand() {
-    return bones[12].position;
+    return bones[12].position - bodyRoot.position;
   }
 	
 	public void Awake()

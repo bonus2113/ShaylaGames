@@ -45,11 +45,11 @@ public class Player : MonoBehaviour {
 	  float diff = (leftHandPos.z - lastLeft.z) + (rightHandPos.z - lastRight.z);
 	  diff *= 0.5f;
 
-    Debug.Log(diff);
 
-	  if (diff < 0) {
+	  if (diff < -Time.deltaTime * 0.5f) {
       acc += transform.forward * StrokeAcceleration;
-	  }
+      Debug.Log(diff);
+    }
 
     vel += acc*Time.deltaTime;
 	  vel -= vel*Friction*Time.deltaTime;
