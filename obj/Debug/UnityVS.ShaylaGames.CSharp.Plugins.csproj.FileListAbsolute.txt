@@ -11,3 +11,4 @@ C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Exte
 C:\Users\dario\Documents\ShaylaGames\obj\Debug\UnityVS.ShaylaGames.CSharp.Plugins.csprojResolveAssemblyReference.cache
 C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\LeapCSharp.NET3.5.dll
