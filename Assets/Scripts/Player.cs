@@ -44,15 +44,24 @@ public class Player : MonoBehaviour {
 
 	  float diff = (leftHandPos.z - lastLeft.z) + (rightHandPos.z - lastRight.z);
 	  diff *= 0.5f;
+    float actualFriction = Friction;
 
 
-	  if (diff < -Time.deltaTime * 0.5f) {
-      acc += transform.forward * StrokeAcceleration;
-      Debug.Log(diff);
-    }
+	  if (diff < -Time.deltaTime*0.15f || Input.GetKeyDown(KeyCode.Space)) {
+	    if (Mathf.Abs(leftHandPos.x - rightHandPos.x) > 0.7f) {
+	      acc += transform.forward*StrokeAcceleration*Mathf.Abs(diff/(Time.deltaTime*0.15f));
+	    }
+	  } else {
+      if (Mathf.Abs(leftHandPos.x - rightHandPos.x) > 0.7f) {
+        if (diff > Time.deltaTime*0.25f) {
+          acc -= transform.forward * StrokeAcceleration * 0.5f * Mathf.Abs(diff / (Time.deltaTime * 0.25f));
+        }
+        actualFriction = 1.0f * Mathf.Abs(leftHandPos.x - rightHandPos.x);
+      }
+	  }
 
     vel += acc*Time.deltaTime;
-	  vel -= vel*Friction*Time.deltaTime;
+    vel -= vel * actualFriction * Time.deltaTime;
 
 	  vel = Vector3.ClampMagnitude(vel, MaxSpeed);
 
