@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+  public float MaxSpeed = 10;
   public float StrokeAcceleration = 10;
   public float Friction = 2;
 
@@ -11,30 +12,49 @@ public class Player : MonoBehaviour {
   public Vector3 ConstrainDirection = new Vector3(0, 0, 1);
 
   public ParticleSystem BreathParticles;
+  public AvatarController avatar;
 
   private Vector3 vel;
   private Vector3 acc;
   private Transform transform;
 
+  private Vector3 leftHandPos = Vector3.zero;
+  private Vector3 rightHandPos = Vector3.zero;
+
 	// Use this for initialization
 	void Start () {
 	  vel = Vector3.zero;
 	  transform = GetComponent<Transform>();
-	}
+    leftHandPos = Vector3.zero;
+    rightHandPos = Vector3.zero;
+  }
 	
 	// Update is called once per frame
 	void Update () {
 
 	  if (Input.GetKeyDown(KeyCode.B)) {
 	    Breath(.7f);
-	  }
+    }
 
-	  if (Input.GetKeyDown(KeyCode.Space)) {
-	    acc += transform.forward * StrokeAcceleration;
+	  Vector3 lastLeft = leftHandPos;
+	  Vector3 lastRight = rightHandPos;
+
+    leftHandPos = avatar.GetLeftHand();
+    rightHandPos = avatar.GetRightHand();
+
+	  float diff = (leftHandPos.z - lastLeft.z) + (rightHandPos.z - lastRight.z);
+	  diff *= 0.5f;
+
+    Debug.Log(diff);
+
+	  if (diff < 0) {
+      acc += transform.forward * StrokeAcceleration;
 	  }
 
     vel += acc*Time.deltaTime;
 	  vel -= vel*Friction*Time.deltaTime;
+
+	  vel = Vector3.ClampMagnitude(vel, MaxSpeed);
 
 	  transform.position += vel*Time.deltaTime;
     Constrain();
