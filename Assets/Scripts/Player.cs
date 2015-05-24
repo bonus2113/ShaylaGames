@@ -12,8 +12,8 @@ public class Player : MonoBehaviour {
   public Vector3 ConstrainDirection = new Vector3(0, 0, 1);
 
   public ParticleSystem BreathParticles;
-  public AvatarController avatar;
-
+  public ZigSkeleton avatar;
+	
   private Vector3 vel;
   private Vector3 acc;
   private Transform transform;
@@ -47,8 +47,8 @@ public class Player : MonoBehaviour {
 	  Vector3 lastLeft = leftHandPos;
 	  Vector3 lastRight = rightHandPos;
 
-    leftHandPos = avatar.GetLeftHand();
-    rightHandPos = avatar.GetRightHand();
+    leftHandPos = avatar.LeftWrist.position - avatar.Waist.position;
+    rightHandPos = avatar.RightWrist.position - avatar.Waist.position;
 
 	  float leftDiff = (leftHandPos.z - lastLeft.z);
     float rightDiff = (rightHandPos.z - lastRight.z);
@@ -71,12 +71,12 @@ public class Player : MonoBehaviour {
           StrokeRight();
         }
 
-	      acc += transform.forward*StrokeAcceleration*Mathf.Abs(diff/(Time.deltaTime*0.15f));
+	      acc += Camera.main.transform.forward*StrokeAcceleration*Mathf.Abs(diff/(Time.deltaTime*0.15f));
 	    }
 	  } else {
       if (Mathf.Abs(leftHandPos.x - rightHandPos.x) > 0.7f) {
         if (diff > Time.deltaTime*0.25f) {
-          acc -= transform.forward * StrokeAcceleration * 0.5f * Mathf.Abs(diff / (Time.deltaTime * 0.25f));
+					acc -= Camera.main.transform.forward * StrokeAcceleration * 0.5f * Mathf.Abs(diff / (Time.deltaTime * 0.25f));
         }
         actualFriction = 1.0f * Mathf.Abs(leftHandPos.x - rightHandPos.x);
       }
