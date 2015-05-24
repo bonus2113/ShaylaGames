@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UIAnimator.cs">
     <Files>
       <File FileName="Assets/ThirdParty/ZigFu/Scripts/UISessionControls/ZigFollowHandPoint.cs" Line="27" Column="46" />
       <File FileName="Assets/Scripts/Player.cs" Line="79" Column="34" />
+      <File FileName="Assets/UIAnimator.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

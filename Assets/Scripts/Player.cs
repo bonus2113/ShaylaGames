@@ -24,6 +24,8 @@ public class Player : MonoBehaviour {
   private float leftTimer = 0;
   private float rightTimer = 0;
 
+	private bool canMove = false;
+
 	// Use this for initialization
 	void Start () {
 	  vel = Vector3.zero;
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour {
     leftHandPos = Vector3.zero;
     rightHandPos = Vector3.zero;
 
+		FindObjectOfType<UIAnimator>().OnGo += () => canMove = true;
 	  FindObjectOfType<BubbleMaster>().DidBreath += Breath;
 	}
 	
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour {
 	  if (Input.GetKeyDown(KeyCode.B)) {
 	    Breath(.7f);
     }
+
+		if(!canMove) return;
 
 	  rightTimer -= Time.deltaTime;
     leftTimer -= Time.deltaTime;

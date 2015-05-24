@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 public class UIAnimator : MonoBehaviour {
+	public event Action OnGo;
 
   void OnEnable() 
   {
@@ -14,6 +15,13 @@ public class UIAnimator : MonoBehaviour {
   void OnDestroy() {
     AudioController.OnIntroStart -= AudioControllerOnOnIntroStart;
   }
+
+
+	public void DoGo() {
+		if(OnGo != null) {
+			OnGo();
+		}
+	}
 
   private void AudioControllerOnOnIntroStart() {
     GetComponent<Animator>().SetTrigger("PlayIntro");
