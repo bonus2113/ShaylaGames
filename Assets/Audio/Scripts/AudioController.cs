@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
 using Atomtwist;
@@ -17,7 +18,8 @@ public class AudioController : MonoBehaviour {
 		}
 	}
 
-
+  public delegate void IntroDelegate();
+  public static event IntroDelegate OnIntroStart;
 	public AudioMixer underwaterMixer;
 	public AudioMixer musicMixer;
 	public GameObject leftArm;
@@ -32,8 +34,6 @@ public class AudioController : MonoBehaviour {
 	{
 		if (playIntro) 
 		{
-			silent.TransitionTo(0);
-			musicOverwater.TransitionTo(0);
 			AudioController.StartIntro();
 		} 
 		else
@@ -61,9 +61,14 @@ public class AudioController : MonoBehaviour {
 		AudioNodesManager.PostEvent("SwimStroke", AudioController.instance.rightArm);
 	}
 
-	public static void StartIntro()
-	{
-		AudioNodesManager.PostEvent("StartMusic", AudioController.instance.gameObject);
+	public static void StartIntro() {
+	  if (OnIntroStart != null) 
+    {
+	    OnIntroStart();
+    }
+    AudioController.instance.silent.TransitionTo(0);
+    AudioController.instance.musicOverwater.TransitionTo(0);
+    AudioNodesManager.PostEvent("StartMusic", AudioController.instance.gameObject);
 		AudioController.instance.StartCoroutine(AudioController.instance.MusicDive());
 	}
 
