@@ -21,13 +21,18 @@ public class Player : MonoBehaviour {
   private Vector3 leftHandPos = Vector3.zero;
   private Vector3 rightHandPos = Vector3.zero;
 
+  private float leftTimer = 0;
+  private float rightTimer = 0;
+
 	// Use this for initialization
 	void Start () {
 	  vel = Vector3.zero;
 	  transform = GetComponent<Transform>();
     leftHandPos = Vector3.zero;
     rightHandPos = Vector3.zero;
-  }
+
+	  FindObjectOfType<BubbleMaster>().DidBreath += Breath;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,14 +41,20 @@ public class Player : MonoBehaviour {
 	    Breath(.7f);
     }
 
+	  rightTimer -= Time.deltaTime;
+    leftTimer -= Time.deltaTime;
+
 	  Vector3 lastLeft = leftHandPos;
 	  Vector3 lastRight = rightHandPos;
 
     leftHandPos = avatar.GetLeftHand();
     rightHandPos = avatar.GetRightHand();
 
-	  float diff = (leftHandPos.z - lastLeft.z) + (rightHandPos.z - lastRight.z);
+	  float leftDiff = (leftHandPos.z - lastLeft.z);
+    float rightDiff = (rightHandPos.z - lastRight.z);
+	  float diff = leftDiff + rightDiff;
 	  diff *= 0.5f;
+
     float actualFriction = Friction;
 
 	  if (Input.GetKeyDown(KeyCode.Space)) {
@@ -52,6 +63,14 @@ public class Player : MonoBehaviour {
 
 	  if (diff < -Time.deltaTime*0.15f || Input.GetKeyDown(KeyCode.Space)) {
 	    if (Mathf.Abs(leftHandPos.x - rightHandPos.x) > 0.7f) {
+        if (leftDiff < -Time.deltaTime * 0.15f) {
+	        StrokeLeft();  
+	      }
+
+        if (rightDiff < -Time.deltaTime * 0.15f) {
+          StrokeRight();
+        }
+
 	      acc += transform.forward*StrokeAcceleration*Mathf.Abs(diff/(Time.deltaTime*0.15f));
 	    }
 	  } else {
@@ -72,6 +91,20 @@ public class Player : MonoBehaviour {
     Constrain();
 	  acc = Vector3.zero;
 	}
+
+  void StrokeLeft() {
+    if (leftTimer <= 0) {
+      AudioController.SwimStrokeLeftArm();
+      leftTimer = 1.0f;
+    }
+  }
+
+  void StrokeRight() {
+    if (rightTimer <= 0) {
+      AudioController.SwimStrokeRightArm();
+      rightTimer = 1.0f;
+    }
+  }
 
   void Constrain() {
     var posOffset = transform.position - ConstrainOrigin;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class BubbleMaster : MonoBehaviour {
@@ -7,7 +8,9 @@ public class BubbleMaster : MonoBehaviour {
 	public float micThreshold = 0.5f;
 	public float micValue;
 	public GameObject bubblePrefab;
-	
+
+  public event Action<float> DidBreath;
+
 	bool _isPlaying;
 
 	void CheckMicInput()
@@ -16,6 +19,9 @@ public class BubbleMaster : MonoBehaviour {
 		{
 			_isPlaying = true;
 			AudioNodesManager.PostEvent("BubbleLoopStart", gameObject);
+		  if (DidBreath != null) {
+        DidBreath(MicController.InputSmoothed(0.5f));
+		  }
 		} 
 		if (MicController.InputSmoothed(0.5f) < micThreshold && _isPlaying)
 		{
