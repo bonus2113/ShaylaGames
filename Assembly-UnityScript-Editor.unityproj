@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ThirdParty\LightShafts\Editor\LightShaftsEditor.js" />
+     <None Include="Assets\ThirdParty\DOTween\DOTween50.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Plugins\donotdelete.txt" />
@@ -78,6 +79,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\ThirdParty\DOTween\readme.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\ThirdParty\LightShafts\InterpolateAlongRays.shader" />
      <None Include="Assets\ThirdParty\LightShafts\DepthBreaks.shader" />
@@ -88,12 +90,14 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\ThirdParty\DOTween\DOTween46.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\ThirdParty\DOTween\DOTween43.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
@@ -139,6 +143,18 @@
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
  <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/ThirdParty/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/ThirdParty/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/ThirdParty/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="OpenNI.Net">
  <HintPath>/Users/ATOMTWIST/Documents/My Documents/ShaylaGames/Assets/ThirdParty/ZigFu/Scripts/_Internal/OpenNI.Net.dll</HintPath>
