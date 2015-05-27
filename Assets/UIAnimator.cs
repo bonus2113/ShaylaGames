@@ -8,6 +8,7 @@ public class UIAnimator : MonoBehaviour {
   void OnEnable() 
   {
       AudioController.OnIntroStart += AudioControllerOnOnIntroStart;  
+	  AudioController.StartIntro();
   }
   void OnDisable() {
     AudioController.OnIntroStart -= AudioControllerOnOnIntroStart;
@@ -18,12 +19,14 @@ public class UIAnimator : MonoBehaviour {
 
 
 	public void DoGo() {
+	FindObjectOfType<Player>().canMove = true;
 		if(OnGo != null) {
 			OnGo();
 		}
 	}
 
   private void AudioControllerOnOnIntroStart() {
+	FindObjectOfType<Player>().canMove = true;
     GetComponent<Animator>().SetTrigger("PlayIntro");
   }
 

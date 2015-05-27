@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
   public Vector3 ConstrainDirection = new Vector3(0, 0, 1);
 
   public ParticleSystem BreathParticles;
+public SoulManager SoulManager;
   public ZigSkeleton avatar;
 	
   private Vector3 vel;
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour {
   private float leftTimer = 0;
   private float rightTimer = 0;
 
-	private bool canMove = true;
+	public bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
@@ -33,18 +34,29 @@ public class Player : MonoBehaviour {
     leftHandPos = Vector3.zero;
     rightHandPos = Vector3.zero;
 
-		FindObjectOfType<UIAnimator>().OnGo += () => canMove = true;
 	  FindObjectOfType<BubbleMaster>().DidBreath += Breath;
+	}
+
+	void Die() {
+		SoulManager.AddSoul(transform.position);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		if(Input.GetKeyDown(KeyCode.Return)) {
+			Die();
+		}
+
+		if(Input.GetKeyDown(KeyCode.T)) {
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
 	  if (Input.GetKeyDown(KeyCode.B)) {
 	    Breath(.7f);
     }
 
-		if(!canMove) return;
 
 	  rightTimer -= Time.deltaTime;
     leftTimer -= Time.deltaTime;
@@ -86,6 +98,8 @@ public class Player : MonoBehaviour {
         actualFriction = 1.0f * Mathf.Abs(leftHandPos.x - rightHandPos.x);
       }
 	  }
+
+		if(!canMove) acc = Vector3.zero;
 
     vel += acc*Time.deltaTime;
     vel -= vel * actualFriction * Time.deltaTime;
