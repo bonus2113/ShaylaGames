@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
   private float leftTimer = 0;
   private float rightTimer = 0;
 
-	private bool canMove = false;
+	private bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
