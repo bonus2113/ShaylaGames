@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 481476}
   - 33: {fileID: 3384060}
   - 23: {fileID: 2391272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mushroom_single
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8499999, y: -6.76999998, z: -14.46}
-  m_LocalScale: {x: .215572357, y: .215572387, z: .215572387}
+  m_LocalPosition: {x: -.769999981, y: -6.80639982, z: -16.9200001}
+  m_LocalScale: {x: .113548674, y: .113548689, z: .113548689}
   m_Children:
   - {fileID: 437858}
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .724137902, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 1.5
   m_SpotAngle: 30

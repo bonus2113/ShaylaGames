@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 439568}
   - 33: {fileID: 3339838}
   - 23: {fileID: 2395410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mushroom_boundle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92190003, y: -6.8657999, z: -14.4350004}
-  m_LocalScale: {x: .425462425, y: .425462395, z: .425462395}
+  m_LocalPosition: {x: 1.11000001, y: -6.95499992, z: -18.2099991}
+  m_LocalScale: {x: .232367307, y: .232367292, z: .232367292}
   m_Children:
   - {fileID: 436338}
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .724137902, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 1.5
   m_SpotAngle: 30
