@@ -4,3 +4,6 @@
 *.suo
 *.csproj
 /Temp
+BreathTaking_AllBuilds.zip
+/obj
+*.unityproj

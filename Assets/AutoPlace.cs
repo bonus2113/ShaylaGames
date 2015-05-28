@@ -28,6 +28,12 @@ public class AutoPlace : MonoBehaviour {
   }
 
 #if UNITY_EDITOR
+
+  [MenuItem("Shayla/VR Toggle")]
+  public static void VRToggle() {
+    GameObject.FindObjectOfType<VRToggler>().Toggle();
+  }
+
   [MenuItem("Shayla/PlaceAll")]
   public static void PlaceAll() {
     var objs = GameObject.FindObjectsOfType<AutoPlace>();
