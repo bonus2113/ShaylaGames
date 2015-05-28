@@ -12,3 +12,13 @@ C:\Users\dario\Documents\ShaylaGames\obj\Debug\UnityVS.ShaylaGames.CSharp.Plugin
 C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\dario\Documents\ShaylaGames\obj\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\LeapCSharp.NET3.5.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween43.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween46.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween50.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\OpenNI.Net.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\ZDK.dll
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween43.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween46.xml
+C:\Users\dario\Documents\ShaylaGames\Temp\UnityVS_bin\Debug\DOTween50.xml
